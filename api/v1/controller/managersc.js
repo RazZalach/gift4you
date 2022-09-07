@@ -68,12 +68,9 @@ module.exports={
            
         },
         getall:(req,res)=>{
-            managers.find().then((rows)=>{
-                if(rows.length>0){
-                    return res.status(200).json({msg:rows});
-                }
-                return res.status(409).json({msg:"not found managers"});
-            })
+        managers.find().then((data)=>{
+        return res.render('manger',{mangarr:data});
+    })           
         },
         recoverpass:(req,res)=>{
             const email=req.body;
@@ -125,7 +122,19 @@ module.exports={
                     }
                 })  
             })      
+        },
+        deletemanager:(req,res)=>{
+            managers.deleteOne({mid:req.params.id}).then((data)=>{
+                if(data.deletedCount==1){
+                    return res.status(200).json({msg:`deleted manager id: ${req.params.id}`});
+                }
+                else{
+                    return res.status(200).json({msg:`manager id not found!!!`});
+                }
+               
+            })
         }
+
 
 
 
