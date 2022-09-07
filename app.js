@@ -32,7 +32,7 @@ app.set('view engine','hbs');
 
 app.use("/mang",managerrouter);
 
-app.get('/wm',(req,res)=>{
+app.get('/wm',auth,(req,res)=>{
     res.render('wm');
 })
 app.get('/loginWm',(req,res)=>{
@@ -49,8 +49,6 @@ app.get('/reset',(req,res)=>{
 if(limitrenderpagebytime())
 {
   
-    
-   // app.use("/product",Auths,ProductRouter);
     app.use("/pres",presrouter);
     app.use("/work",workrouter);
     app.use("/cate",categoryrouter);
@@ -74,7 +72,7 @@ if(limitrenderpagebytime())
 }
 else{
     require('./api/v1/controller/workersc.js').sendgiftemail();
-    app.all('/*',(req,res)=>{
+    app.all('*',(req,res)=>{
         res.render('expired');
     })
 }
@@ -84,6 +82,7 @@ else{
 // app.all('*',(req,res)=>{
 //     res.status(404).json({msg:"404 page not found"});
 // });
+
 module.exports=app;
 function limitrenderpagebytime(){
 
