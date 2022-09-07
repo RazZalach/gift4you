@@ -29,7 +29,7 @@ app.set('view engine','hbs');
 
 app.use("/mang",managerrouter);
 
-app.get('/wm',auth,(req,res)=>{
+app.get('/wm',(req,res)=>{
     res.render('wm');
 })
 app.get('/loginWm',(req,res)=>{
