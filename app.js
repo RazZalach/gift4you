@@ -17,7 +17,7 @@ const categoryrouter=require('./api/v1/route/categoriesr.js');
 const auth=require("./api/v1/middleware/auth");
 
 
-const uri=process.env.CON_STR;
+
 mongoose.connect("mongodb+srv://ManagerLea:yaron123@cluster0.rgjna9k.mongodb.net/GiftForYou",{useNewUrlParser:true,useUnifiedTopology:true}).then(
     ()=>{console.log("mongodb connect!")});
 
