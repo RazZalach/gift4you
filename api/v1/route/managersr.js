@@ -1,0 +1,10 @@
+const router=require('express').Router();
+const {register,login,getall,recoverpass,resetpass}=require('../controller/managersc');
+router.post("/reg",register);
+router.post("/log",login);
+router.post("/rec",recoverpass);
+router.post("/res",resetpass);
+router.get("/",getall);
+
+
+module.exports=router;
