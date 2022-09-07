@@ -309,12 +309,12 @@ h1{
     <script>
         function login()
         { 
-             const Email=document.getElementById("email").value;
+             const email=document.getElementById("email").value;
              const password=document.getElementById("password").value;
              fetch('/mang/log',{
                     method: 'POST',
                     body:new URLSearchParams({
-                      email:Email,
+                      email:email,
                       password:password
                      })
                
