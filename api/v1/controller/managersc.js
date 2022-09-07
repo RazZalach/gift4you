@@ -56,11 +56,11 @@ module.exports={
                         return res.status(409).json({msg:0});
                     else
                     {
-                       const maxage= 3 * 60 * 60;
-                        const token = "Bearer " + jwt.sign({email},process.env.SECRET_KEY,{expiresIn:maxage});
-                        res.cookie("jwt",token,{
-                            httpOnly: true,
-                            maxAge:maxage * 1000 });
+                    //    const maxage= 3 * 60 * 60;
+                    //     const token = "Bearer " + jwt.sign({email},process.env.SECRET_KEY,{expiresIn:maxage});
+                    //     res.cookie("jwt",token,{
+                    //         httpOnly: true,
+                    //         maxAge:maxage * 1000 });
                        return res.status(200).json({msg:1});
                     }
                 })  
