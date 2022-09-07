@@ -1,6 +1,4 @@
-
 const express=require('express');
-
 const app=express();
 const cors=require('cors');
 const morgan=require('morgan');
@@ -8,7 +6,6 @@ const mongoose=require('mongoose');
 const hbs=require('hbs');
 const path=require('path');
 const cookieParser= require("cookie-parser");
- 
 const managerrouter=require('./api/v1/route/managersr.js');
 const presrouter=require('./api/v1/route/presentsr.js');
 const workrouter=require('./api/v1/route/workersr.js');
@@ -48,7 +45,6 @@ app.get('/reset',(req,res)=>{
 
 if(limitrenderpagebytime())
 {
-  
     app.use("/pres",presrouter);
     app.use("/work",workrouter);
     app.use("/cate",categoryrouter);
@@ -79,11 +75,11 @@ else{
 
 
 
-// app.all('*',(req,res)=>{
-//     res.status(404).json({msg:"404 page not found"});
-// });
 
 module.exports=app;
+
+
+
 function limitrenderpagebytime(){
 
     const myyear=process.env.YEAR;

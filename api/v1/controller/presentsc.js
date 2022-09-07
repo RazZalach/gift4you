@@ -147,8 +147,8 @@ module.exports={
          })
     },
     getdateexpired:(req,res)=>{
-        let fulldate=process.env.DAY +"/" +process.env.MONTH+"/"+process.env.YEAR;
-
+        const fulldate=process.env.DAY +"/" +process.env.MONTH+"/"+process.env.YEAR;
+        console.log(fulldate);
         return res.status(200).json({msg:fulldate});
     }
     
