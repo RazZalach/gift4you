@@ -75,21 +75,16 @@ if(limitrenderpagebytime())
 }
 else{
     require('./api/v1/controller/workersc.js').sendgiftemail();
-    app.all('*',(req,res)=>{
+    app.all('/*',(req,res)=>{
         res.render('expired');
     })
 }
 
 
 
-app.all('*',(req,res)=>{
-    res.status(404).json({msg:"404 page not found"});
-
-
-
-
-
-});
+// app.all('*',(req,res)=>{
+//     res.status(404).json({msg:"404 page not found"});
+// });
 module.exports=app;
 function limitrenderpagebytime(){
 
