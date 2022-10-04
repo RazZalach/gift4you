@@ -1,3 +1,4 @@
+ require('dotenv').config();
 
 const express=require('express');
 const app=express();
@@ -29,9 +30,6 @@ app.set('view engine','hbs');
 
 
 app.use("/mang",managerrouter);
-app.get("/insertmanager",(req,res)=>{
-    res.render('manger');
-})
 
 app.get('/wm',(req,res)=>{
     res.render('wm');
